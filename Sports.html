@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Life Shop - Electronics</title>
+  <style>
+    /* Reset and basics */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9fafb;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      background: #24292e;
+      color: white;
+      padding: 1rem 2rem;
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav button {
+      background: #1db954;
+      border: none;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    nav button:hover {
+      background: #17a742;
+    }
+
+    main {
+      max-width: 1000px;
+      width: 100%;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    main h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #24292e;
+      font-weight: 700;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.2s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    .product-image {
+      width: 160px;
+      height: 160px;
+      object-fit: contain;
+      margin-bottom: 1rem;
+    }
+
+    .product-name {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+      color: #24292e;
+      text-align: center;
+    }
+
+    .product-size {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .btn-buy {
+      background: #1db954;
+      border: none;
+      color: white;
+      padding: 0.6rem 1.4rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      width: 100%;
+    }
+
+    .btn-buy:hover {
+      background: #17a742;
+    }
+
+    @media (max-width: 600px) {
+      main h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Your Life Shop</h1>
+    <nav>
+      <button id="btn-electronics">Electronics</button>
+      <button id="btn-fashion">Fashion</button>
+      <button id="btn-home-kitchen">Home & Kitchen</button>
+      <button id="btn-homepage">HomePage</button>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Sports Collection</h2>
+
+    <div class="products-grid">
+      <div class="product-card">
+        <img src="potho/Pro Match Football.jpeg" alt="Football" class="product-image" />
+        <div class="product-name">Pro Match Football</div>
+        <div class="product-size">Size 5, Synthetic Leather</div>
+        <button class="btn-buy">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="potho/Willow Cricket Bat.jpeg" alt="Cricket Bat" class="product-image" />
+        <div class="product-name">Willow Cricket Bat</div>
+        <div class="product-size">Full Size, English Willow</div>
+        <button class="btn-buy">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="potho/NBA Indoor Basketball.jpeg" alt="Basketball" class="product-image" />
+        <div class="product-name">NBA Indoor Basketball</div>
+        <div class="product-size">Size 7, Composite Leather</div>
+        <button class="btn-buy">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/160x160?text=Tennis+Racket" alt="Tennis Racket" class="product-image" />
+        <div class="product-name">Pro Tennis Racket</div>
+        <div class="product-size">27", Graphite Frame</div>
+        <button class="btn-buy">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/160x160?text=Running+Shoes" alt="Running Shoes" class="product-image" />
+        <div class="product-name">Lightweight Running Shoes</div>
+        <div class="product-size">Size 6-11, Breathable Mesh</div>
+        <button class="btn-buy">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/160x160?text=Yoga+Mat" alt="Yoga Mat" class="product-image" />
+        <div class="product-name">Eco-Friendly Yoga Mat</div>
+        <div class="product-size">6mm Thick, 183 x 61 cm</div>
+        <button class="btn-buy">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/160x160?text=Dumbbells" alt="Dumbbells" class="product-image" />
+        <div class="product-name">Hex Dumbbell Set</div>
+        <div class="product-size">5kg Pair, Rubber Coated</div>
+        <button class="btn-buy">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/160x160?text=Skateboard" alt="Skateboard" class="product-image" />
+        <div class="product-name">Street Pro Skateboard</div>
+        <div class="product-size">31", Maple Wood Deck</div>
+        <button class="btn-buy">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/160x160?text=Badminton+Set" alt="Badminton Set" class="product-image" />
+        <div class="product-name">Badminton Combo Set</div>
+        <div class="product-size">2 Rackets + 3 Shuttles</div>
+        <button class="btn-buy">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/160x160?text=Boxing+Gloves" alt="Boxing Gloves" class="product-image" />
+        <div class="product-name">Training Boxing Gloves</div>
+        <div class="product-size">12 oz, Synthetic Leather</div>
+        <button class="btn-buy">Add to Cart</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Navigation buttons
+    document.getElementById('btn-electronics').addEventListener('click', () => {
+      window.location.href = 'Electronics.html';
+    });
+    document.getElementById('btn-fashion').addEventListener('click', () => {
+      window.location.href = 'Fashion.html';
+    });
+    document.getElementById('btn-home-kitchen').addEventListener('click', () => {
+      window.location.href = 'Home&Kitchen.html';
+    });
+
+    document.getElementById('btn-homepage').addEventListener('click', () => {
+      window.location.href = 'index.html';
+    });
+
+    // Add to Cart functionality
+    const addToCartButtons = document.querySelectorAll('.btn-buy');
+    addToCartButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        let cartCount = parseInt(localStorage.getItem('cartCount')) || 0;
+        cartCount++;
+        localStorage.setItem('cartCount', cartCount);
+        alert('Item added to cart! ');
+      });
+    });
+  </script>
+
+</body>
+</html>

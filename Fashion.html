@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Life Shop - Fashion</title>
+  <style>
+    /* Reset and basics */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9fafb;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header {
+      background: #24292e;
+      color: white;
+      padding: 1rem 2rem;
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+    nav button {
+      background: #1db954;
+      border: none;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    nav button:hover {
+      background: #17a742;
+    }
+    main {
+      max-width: 1000px;
+      width: 100%;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    main h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #24292e;
+      font-weight: 700;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 2rem;
+    }
+    .product-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.2s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+    .product-image {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+    .product-name {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+      color: #24292e;
+      text-align: center;
+    }
+    .product-size {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+    .btn-buy {
+      background: #1db954;
+      border: none;
+      color: white;
+      padding: 0.6rem 1.4rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      width: 100%;
+    }
+    .btn-buy:hover {
+      background: #17a742;
+    }
+    @media (max-width: 600px) {
+      main h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Your Life Shop</h1>
+    <nav>
+       <button id="btn-electronics">Electronics</button>
+      <button id="btn-home-kitchen">Home & Kitchen</button>
+      <button id="btn-sports">Sports</button>
+      <button id="btn-homepage">HomePage</button>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Fashion Collection</h2>
+
+    <div class="products-grid">
+      <div class="product-card">
+        <img src="potho/Classic Denim Jacket.jpeg" alt="Denim Jacket" class="product-image" />
+        <div class="product-name">Classic Denim Jacket</div>
+        <div class="product-size">Sizes S to XL, Indigo Blue</div>
+        <button class="btn-buy">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="potho/White Casual Sneakers.jpeg" alt="Sneakers" class="product-image" />
+        <div class="product-name">White Casual Sneakers</div>
+        <div class="product-size">Unisex, Size 6–11</div>
+        <button class="btn-buy">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="potho/Genuine Leather Handbag.jpeg" alt="Leather Bag" class="product-image" />
+        <div class="product-name">Genuine Leather Handbag</div>
+        <div class="product-size">Brown, 12” x 10”</div>
+        <button class="btn-buy">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/160x160?text=Summer+Dress" alt="Summer Dress" class="product-image" />
+        <div class="product-name">Floral Summer Dress</div>
+        <div class="product-size">Sizes XS to L, Cotton Blend</div>
+        <button class="btn-buy">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/160x160?text=Watch" alt="Wrist Watch" class="product-image" />
+        <div class="product-name">Analog Wrist Watch</div>
+        <div class="product-size">Stainless Steel, Unisex</div>
+        <button class="btn-buy">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/160x160?text=Sunglasses" alt="Sunglasses" class="product-image" />
+        <div class="product-name">UV Protection Sunglasses</div>
+        <div class="product-size">Wayfarer Style</div>
+        <button class="btn-buy">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/160x160?text=Hoodie" alt="Hoodie" class="product-image" />
+        <div class="product-name">Warm Cotton Hoodie</div>
+        <div class="product-size">Sizes M to XXL, Grey</div>
+        <button class="btn-buy">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/160x160?text=Jeans" alt="Jeans" class="product-image" />
+        <div class="product-name">Slim Fit Jeans</div>
+        <div class="product-size">Waist 28–36, Blue</div>
+        <button class="btn-buy">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/160x160?text=Blazer" alt="Blazer" class="product-image" />
+        <div class="product-name">Formal Men's Blazer</div>
+        <div class="product-size">Navy, Sizes M to XL</div>
+        <button class="btn-buy">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/160x160?text=Scarf" alt="Scarf" class="product-image" />
+        <div class="product-name">Woolen Winter Scarf</div>
+        <div class="product-size">180 cm, Red & Grey</div>
+        <button class="btn-buy">Add to Cart</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+   
+    document.getElementById('btn-electronics').addEventListener('click', () => {
+      window.location.href = 'Electronics.html';
+    });
+    document.getElementById('btn-home-kitchen').addEventListener('click', () => {
+      window.location.href = 'Home&Kitchen.html';
+    });
+    document.getElementById('btn-sports').addEventListener('click', () => {
+      window.location.href = 'Sports.html';
+    });
+    document.getElementById('btn-homepage').addEventListener('click', () => {
+      window.location.href = 'index.html';
+    });
+   // Add to Cart functionality
+    const addToCartButtons = document.querySelectorAll('.btn-buy');
+    addToCartButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        let cartCount = parseInt(localStorage.getItem('cartCount')) || 0;
+        cartCount++;
+        localStorage.setItem('cartCount', cartCount);
+        alert('Item added to cart! ');
+      });
+    });
+  </script>
+
+
+</body>
+</html>

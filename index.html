@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Life Shop - Home</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9fafb;
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: #24292e;
+      color: white;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Pole4 style search bar */
+    .search-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .search-bar {
+      display: flex;
+      align-items: center;
+      background-color: #3b3f44;
+      border-radius: 25px;
+      padding: 8px 14px;
+      cursor: pointer;
+      color: #ddd;
+      font-size: 0.95rem;
+      min-width: 200px;
+      gap: 8px;
+      transition: background-color 0.3s;
+    }
+    .search-bar:hover {
+      background-color: #4b4f55;
+    }
+    .search-bar svg {
+      width: 20px;
+      height: 20px;
+      fill: white;
+    }
+
+    .search-dropdown {
+      display: none;
+      position: absolute;
+      top: 45px;
+      right: 0;
+      background-color: #333;
+      border-radius: 8px;
+      padding: 0.8rem;
+      flex-direction: column;
+      z-index: 150;
+      min-width: 180px;
+    }
+    .search-dropdown button {
+      background: #1db954;
+      border: none;
+      color: white;
+      padding: 0.5rem 1rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.3s ease;
+      width: 100%;
+    }
+    .search-dropdown button:last-child {
+      margin-bottom: 0;
+    }
+    .search-dropdown button:hover {
+      background: #17a742;
+    }
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background-color: #333;
+      padding: 1rem;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      border-radius: 8px;
+      z-index: 200;
+    }
+    .mobile-menu button {
+      background: #1db954;
+      margin-bottom: 0.5rem;
+      border: none;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .mobile-menu button:hover {
+      background: #17a742;
+    }
+
+    main {
+      flex-grow: 1;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      text-align: center;
+    }
+    main h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #24292e;
+      font-weight: 700;
+    }
+    main p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 1.5rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.8;
+    }
+
+    section.contact-us {
+      background: white;
+      padding: 2rem 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      max-width: 700px;
+      margin: 3rem auto 2rem;
+      text-align: left;
+    }
+    section.contact-us h3 {
+      margin-bottom: 1rem;
+      color: #24292e;
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    label {
+      font-weight: 600;
+      color: #333;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    textarea {
+      min-height: 100px;
+    }
+    button[type="submit"] {
+      background: #1db954;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .checkout-section {
+      background: white;
+      padding: 2rem 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      max-width: 700px;
+      margin: 2rem auto 4rem;
+      text-align: center;
+    }
+    .checkout-section button {
+      background: #ff6f00;
+      color: white;
+      padding: 0.8rem 2rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #24292e;
+      color: white;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 900px;
+      margin: 0 auto;
+      border-top: 3px solid #1db954;
+    }
+    footer .footer-section {
+      flex: 1 1 250px;
+      margin: 0.5rem 1rem;
+    }
+    footer h4 {
+      margin-bottom: 1rem;
+      color: #1db954;
+      font-size: 1.1rem;
+    }
+    footer a {
+      color: #ddd;
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: #1db954;
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Your Life Shop</h1>
+
+  <div class="header-controls">
+    <div class="search-container" id="searchContainer" tabindex="0">
+      <div class="search-bar">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M10 2a8 8 0 105.293 14.293l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/>
+        </svg>
+        <span>Search Categories</span>
+      </div>
+      <div class="search-dropdown" id="searchDropdown">
+        <button onclick="location.href='Electronics.html'">Electronics</button>
+        <button onclick="location.href='Fashion.html'">Fashion</button>
+        <button onclick="location.href='Home&Kitchen.html'">Home & Kitchen</button>
+        <button onclick="location.href='Sports.html'">Sports</button>
+      </div>
+    </div>
+
+    <div class="hamburger" id="hamburgerBtn" tabindex="0">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button onclick="location.href='account.html'">My Account</button>
+    <button onclick="location.href='cart.html'">Cart</button>
+  </div>
+</header>
+
+<main>
+  <h2>Welcome to Your Life Shop</h2>
+  <p>Your Life Shop is your ultimate online mega store offering a wide range of products to suit every lifestyle.</p>
+  <p>Navigate through the categories above to explore our collection.</p>
+
+  <section class="contact-us">
+    <h3>Contact Us</h3>
+    <form>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Your full name" required />
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required />
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <section class="checkout-section">
+    <h3>Your Cart</h3>
+    <p>Items added to your cart will appear here.</p>
+    <button onclick="location.href='Checkoutpage.html'">Go to Checkout</button>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-section">
+    <h4>Customer Service</h4>
+    <p><a href="#">Contact Us</a></p>
+    <p><a href="#">FAQ</a></p>
+    <p><a href="#">Returns</a></p>
+  </div>
+  <div class="footer-section">
+    <h4>About</h4>
+    <p>Your Life Shop is committed to delivering top products to you.</p>
+  </div>
+  <div class="footer-section">
+    <h4>Follow Us</h4>
+    <a href="#">Facebook</a> | <a href="#">Twitter</a>
+  </div>
+</footer>
+
+<script>
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburgerBtn.addEventListener('click', () => {
+    mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+  });
+
+  const searchContainer = document.getElementById('searchContainer');
+  const searchDropdown = document.getElementById('searchDropdown');
+  searchContainer.addEventListener('click', (e) => {
+    e.stopPropagation();
+    searchDropdown.style.display = searchDropdown.style.display === 'flex' ? 'none' : 'flex';
+  });
+  document.addEventListener('click', (e) => {
+    if (!searchContainer.contains(e.target)) searchDropdown.style.display = 'none';
+    if (!hamburgerBtn.contains(e.target)) mobileMenu.style.display = 'none';
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Life Shop - My Account</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f7f9fc;
+      margin: 0;
+      padding: 0;
+      color: #2c3e50;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header, footer {
+      background-color: #34495e;
+      color: white;
+      padding: 1rem 2rem;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      font-size: 1.9rem;
+      cursor: pointer;
+      letter-spacing: 1.2px;
+    }
+    nav button {
+      background-color: #2980b9;
+      border: none;
+      color: white;
+      padding: 0.6rem 1.4rem;
+      margin-left: 1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    nav button:hover {
+      background-color: #1f6391;
+    }
+    main {
+      max-width: 900px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem;
+      flex-grow: 1;
+    }
+    main h2 {
+      font-size: 2.7rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #34495e;
+      text-align: center;
+    }
+    .account-container {
+      background: white;
+      padding: 2rem 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+    .welcome-msg {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      color: #2c3e50;
+      font-weight: 600;
+    }
+    .account-section {
+      margin-bottom: 2rem;
+    }
+    .account-section h3 {
+      font-size: 1.5rem;
+      color: #2c3e50;
+      border-bottom: 2px solid #2980b9;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1rem;
+    }
+    .account-details, .orders-list {
+      font-size: 1.05rem;
+      color: #566573;
+      line-height: 1.6;
+    }
+    .orders-list table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.8rem;
+    }
+    .orders-list th, .orders-list td {
+      padding: 0.8rem 1rem;
+      border: 1px solid #d5d8dc;
+      text-align: left;
+    }
+    .orders-list th {
+      background-color: #2980b9;
+      color: white;
+    }
+    .orders-list tr:nth-child(even) {
+      background-color: #f4f7f9;
+    }
+    .logout-btn {
+      margin-top: 1.5rem;
+      background-color: #e74c3c;
+      border: none;
+      color: white;
+      padding: 0.75rem 1.6rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    .logout-btn:hover {
+      background-color: #c0392b;
+    }
+    @media (max-width: 600px) {
+      main {
+        margin: 1.5rem 1rem;
+        padding: 0 1rem;
+      }
+      .account-container {
+        padding: 1.5rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 onclick="location.href='index.html'">Your Life Shop</h1>
+    <nav>
+      <button onclick="location.href='index.html'">Homepage</button>
+     
+      <button onclick="location.href='cart.html'">Cart</button>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Welcome to Your Account</h2>
+    <div class="account-container" role="main" aria-label="User account details and orders">
+      <p class="welcome-msg">Hello, <strong>John Doe</strong>! Here’s a summary of your account and recent activity.</p>
+
+      <section class="account-section" aria-labelledby="account-info-title">
+        <h3 id="account-info-title">Account Information</h3>
+        <div class="account-details">
+          <p><strong>Email:</strong> johndoe@example.com</p>
+          <p><strong>Member since:</strong> January 2023</p>
+          <p><strong>Phone:</strong> +1 234 567 8901</p>
+          <p><strong>Shipping Address:</strong><br/>
+            1234 Elm Street,<br/>
+            Springfield, IL 62704,<br/>
+            United States
+          </p>
+        </div>
+      </section>
+
+      <section class="account-section" aria-labelledby="orders-title">
+        <h3 id="orders-title">Recent Orders</h3>
+        <div class="orders-list">
+          <table>
+            <thead>
+              <tr>
+                <th>Order #</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>102345</td>
+                <td>2025-05-01</td>
+                <td>Shipped</td>
+                <td>$149.99</td>
+                <td><button onclick="alert('Order 102345 details coming soon!')">View</button></td>
+              </tr>
+              <tr>
+                <td>102331</td>
+                <td>2025-04-15</td>
+                <td>Delivered</td>
+                <td>$89.99</td>
+                <td><button onclick="alert('Order 102331 details coming soon!')">View</button></td>
+              </tr>
+              <tr>
+                <td>102310</td>
+                <td>2025-04-05</td>
+                <td>Processing</td>
+                <td>$59.50</td>
+                <td><button onclick="alert('Order 102310 details coming soon!')">View</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <button class="logout-btn" onclick="alert('Logging out...')">Logout</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Your Life Shop. All rights reserved.</p>
+  </footer>
+</body>
+</html>
